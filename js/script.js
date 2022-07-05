@@ -1,29 +1,12 @@
-const url = "./data/data.json";
+const url = './data/data.json';
 
 const informationsField = document.querySelectorAll('.informations');
 const btnTimeTracking = document.querySelectorAll('.periodos li');
 
-btnTimeTracking.forEach((btn) => {
-    btn.addEventListener('click', handleTimeTracking);
-});
-
-function handleTimeTracking(event) {
-    const targetBtn = event.target.id;
-    initTimeTracking(targetBtn);
-}
-
-async function initTimeTracking(targetBtn) {
-    const dataResponse = await fetch(url);
-    const dataJSON = await dataResponse.json();
-
-    if (targetBtn === 'daily') handleTimeTrackingInitial(dataJSON);
-    else if (targetBtn === 'weekly') handleTimeTrackingWeekly(dataJSON);
-    else if (targetBtn === 'monthly') handleTimeTrackingMonthly(dataJSON)
-}
-
+// Renderiza as informações de rastreamento de tempo DIÁRIO
 function handleTimeTrackingInitial(dataJSON) {
     informationsField.forEach((information, i) => {
-        information.innerHTML = `
+        informationsField[i].innerHTML = `
             <p>${dataJSON[i].title}</p>
             <h2>${dataJSON[i].timeframes.daily.current}hrs</h2>
             <span>
@@ -33,9 +16,10 @@ function handleTimeTrackingInitial(dataJSON) {
     });
 }
 
+// Renderiza as informações de rastreamento de tempo SEMANAL
 function handleTimeTrackingWeekly(dataJSON) {
     informationsField.forEach((information, i) => {
-        information.innerHTML = `
+        informationsField[i].innerHTML = `
             <p>${dataJSON[i].title}</p>
             <h2>${dataJSON[i].timeframes.weekly.current}hrs</h2>
             <span>
@@ -45,9 +29,10 @@ function handleTimeTrackingWeekly(dataJSON) {
     });
 }
 
+// Renderiza as informações de rastreamento de tempo MENSAL
 function handleTimeTrackingMonthly(dataJSON) {
     informationsField.forEach((information, i) => {
-        information.innerHTML = `
+        informationsField[i].innerHTML = `
             <p>${dataJSON[i].title}</p>
             <h2>${dataJSON[i].timeframes.monthly.current}hrs</h2>
             <span>
@@ -57,4 +42,28 @@ function handleTimeTrackingMonthly(dataJSON) {
     });
 }
 
+// Inicializa a renderização dos elementos
+// de acordo com o retorno do click do usuário
+// no escopo do rastreamento
+async function initTimeTracking(targetBtn) {
+    const dataResponse = await fetch(url);
+    const dataJSON = await dataResponse.json();
+
+    if (targetBtn === 'daily') handleTimeTrackingInitial(dataJSON);
+    else if (targetBtn === 'weekly') handleTimeTrackingWeekly(dataJSON);
+    else if (targetBtn === 'monthly') handleTimeTrackingMonthly(dataJSON)
+}
+
+// Captura o escopo do rastreamento de 
+// acordo com a escolha do usuário
+function handleTimeTracking(event) {
+    const targetBtn = event.target.id;
+    initTimeTracking(targetBtn);
+}
+
+btnTimeTracking.forEach((btn) => {
+    btn.addEventListener('click', handleTimeTracking);
+});
+
+// Inicializa como DIÁRIO por padrão
 initTimeTracking('daily');
