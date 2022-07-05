@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- favicon -->
-    <link rel="shortcut icon" href="./img/favicon/timer_black.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/timer_black_24dp.svg" type="image/x-icon">
 
-    <title>Time Tracking Dashboard</title>
+    <title>Time Tracking Dashboard | Frontend Mentor</title>
 
     <!-- Font-family -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,29 +19,61 @@
 </head>
 
 <body>
-
     <main class="container">
-        <div class="grid-container">
+        <section class="box">
+            <article class="perfil">
+                <div>
+                    <div class="imagem">
+                        <img src="./img/image-jeremy.png" alt="profile-image">
+                    </div>
 
-            <div class="profile">
-                <div class="profile-img">
-                    <img src="./img/image-jeremy.png" alt="Jeremy">
+                    <div class="name">
+                        <span>Report for</span>
+                        <h1>Jeremy <br> Robson</h1>
+                    </div>
                 </div>
-                <div class="profile-name">
-                    <h1>Jeremy</h1>
-                    <h1>Robson</h1>
+
+                <div class="periodos">
+                    <ul>
+                        <li id="daily">Daily</li>
+                        <li id="weekly">Weekly</li>
+                        <li id="monthly">Monthly</li>
+                    </ul>
                 </div>
+            </article>
 
-                <ul class="profile-time-frames">
-                    <li id="daily">Daily</li>
-                    <li id="weekly">Weekly</li>
-                    <li id="monthly">Monthly</li>
-                </ul>
-            </div>
+            <section class="grid-items-container">
+                <article class="item-card work">
+                    <div class="sobreposicao"></div>
+                    <div class="informations"></div>
+                </article>
 
-            <ul class="work box">
-            </ul>
-        </div>
+                <article class="item-card play">
+                    <div class="sobreposicao"></div>
+                    <div class="informations"></div>
+                </article>
+
+                <article class="item-card study">
+                    <div class="sobreposicao"></div>
+                    <div class="informations"></div>
+                </article>
+
+                <article class="item-card exercise">
+                    <div class="sobreposicao"></div>
+                    <div class="informations"></div>
+                </article>
+
+                <article class="item-card social">
+                    <div class="sobreposicao"></div>
+                    <div class="informations"></div>
+                </article>
+
+                <article class="item-card self-care">
+                    <div class="sobreposicao"></div>
+                    <div class="informations"></div>
+                </article>
+            </section>
+        </section>
     </main>
 
     <script src="./js/script.js"></script>

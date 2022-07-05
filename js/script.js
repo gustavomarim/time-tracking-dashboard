@@ -1,24 +1,60 @@
-const REQUEST_PATH = "./data/data.json";
+const url = "./data/data.json";
 
-const timeFrames = document.querySelectorAll(".profile-time-frames li");
+const informationsField = document.querySelectorAll('.informations');
+const btnTimeTracking = document.querySelectorAll('.periodos li');
 
-function getTimeFrameLi(event) {
-  const { id } = event.target;
-  // console.log("id", id);
-  return id;
-}
-
-timeFrames.forEach((timeFrame) => {
-  timeFrame.addEventListener("click", getTimeFrameLi);
+btnTimeTracking.forEach((btn) => {
+    btn.addEventListener('click', handleTimeTracking);
 });
 
-function getData() {
-  fetch(REQUEST_PATH)
-    .then((response) => response.json())
-    .then((response) => {
-      const data = response;
-      return data;
+function handleTimeTracking(event) {
+    const targetBtn = event.target.id;
+    initTimeTracking(targetBtn);
+}
+
+async function initTimeTracking(targetBtn) {
+    const dataResponse = await fetch(url);
+    const dataJSON = await dataResponse.json();
+
+    if (targetBtn === 'daily') handleTimeTrackingInitial(dataJSON);
+    else if (targetBtn === 'weekly') handleTimeTrackingWeekly(dataJSON);
+    else if (targetBtn === 'monthly') handleTimeTrackingMonthly(dataJSON)
+}
+
+function handleTimeTrackingInitial(dataJSON) {
+    informationsField.forEach((information, i) => {
+        information.innerHTML = `
+            <p>${dataJSON[i].title}</p>
+            <h2>${dataJSON[i].timeframes.daily.current}hrs</h2>
+            <span>
+                Last Daily - ${dataJSON[i].timeframes.daily.previous}hrs
+            </span>
+        `;
     });
 }
 
-getData();
+function handleTimeTrackingWeekly(dataJSON) {
+    informationsField.forEach((information, i) => {
+        information.innerHTML = `
+            <p>${dataJSON[i].title}</p>
+            <h2>${dataJSON[i].timeframes.weekly.current}hrs</h2>
+            <span>
+                Last Weekly - ${dataJSON[i].timeframes.weekly.previous}hrs
+            </span>
+        `;
+    });
+}
+
+function handleTimeTrackingMonthly(dataJSON) {
+    informationsField.forEach((information, i) => {
+        information.innerHTML = `
+            <p>${dataJSON[i].title}</p>
+            <h2>${dataJSON[i].timeframes.monthly.current}hrs</h2>
+            <span>
+                Last Monthly - ${dataJSON[i].timeframes.monthly.previous}hrs
+            </span>
+        `;
+    });
+}
+
+initTimeTracking('daily');
