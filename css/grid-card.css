@@ -30,6 +30,18 @@
   transition   : .5s ease all;
 }
 
+.informations::before {
+  content   : "";
+  background: url("../img/icons/icon-ellipsis.svg") no-repeat no-repeat;
+  width     : 25px;
+  height    : 25px;
+  right     : 20px;
+  top       : 25px;
+  cursor    : pointer;
+  position  : absolute;
+}
+
+
 .informations:hover {
   background: var(--Desaturated-blue);
   cursor    : pointer;
