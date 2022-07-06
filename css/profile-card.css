@@ -1,70 +1,75 @@
 .perfil {
-  display       : flex;
-  align-items   : flex-start;
-  flex-direction: column;
-  box-sizing    : border-box;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  flex-direction : column;
+  height         : 460px;
+  box-sizing     : border-box;
 }
 
-.perfil>div {
-  border-radius: 10px;
-  width        : 230px;
-  position     : relative;
+.user-information {
+  border-radius: 1em;
+  width        : 250px;
+  height       : 450px;
+  background   : var(--Blue);
+  z-index      : 2;
 }
 
-.perfil>div:first-child {
-  background: var(--Blue);
-  height    : 295px;
-  top       : 20px;
-  z-index   : 1;
+.user-image {
+  padding: 30px 0 30px 20px;
 }
+
+.user-image img {
+  width        : 90px;
+  border-radius: 50%;
+  border       : 3px solid #fff;
+}
+
+.user-name span {
+  font-size     : 16px;
+  padding-left  : 20px;
+  padding-bottom: 10px;
+  font-weight   : 400;
+  color         : rgb(184, 183, 183);
+}
+
+.user-name h1 {
+  padding-left  : 20px;
+  font-size     : 40px;
+  font-weight   : 300;
+  letter-spacing: .03em;
+}
+
 
 .periodos {
-  background   : var(--Dark-blue);
-  border-radius: 0 0 10px 10px;
-  height       : 165px;
-  top          : -20px;
-  position     : relative;
-}
-
-.imagem {
-  padding: 20px;
-}
-
-.imagem img {
-  width        : 80px;
-  border       : 4px solid #fff;
-  border-radius: 50%;
-}
-
-.name h1 {
-  font-size   : 2em;
-  font-weight : 300;
-  padding-left: 20px;
-}
-
-.name span {
-  font-size   : 1em;
-  font-weight : 300;
-  padding-left: 20px;
-  color       : var(--Pale-Blue);
+  display       : flex;
+  padding-bottom: 17px;
+  align-items   : end;
+  bottom        : 15px;
+  width         : 100%;
+  height        : 40%;
+  border-radius : 0 0 1em 1em;
+  background    : var(--Dark-blue);
+  position      : relative;
+  z-index       : 1;
 }
 
 .periodos ul {
-  padding-top : 50px;
-  padding-left: 20px;
+  margin-left: 20px;
 }
 
 .periodos li {
-  margin-bottom: 8px;
-  width        : 50px;
-  color        : var(--Desaturated-blue);
+  margin-top: 15px;
+  font-size : 18px;
+  cursor    : pointer;
+  color     : var(--Desaturated-blue);
+  transition: .5s ease all;
 }
 
 .periodos li:hover {
-  cursor: pointer;
-  color : #FFF;
+  color: #fff;
 }
 
-.active {
-  color: #FFF;
+.periodos ul li.active {
+  color: #fff;
 }
