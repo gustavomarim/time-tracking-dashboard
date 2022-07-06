@@ -57,6 +57,11 @@ async function initTimeTracking(targetBtn) {
 // Captura o escopo do rastreamento de 
 // acordo com a escolha do usuário
 function handleTimeTracking(event) {
+    btnTimeTracking.forEach((btn) => {
+        btn.classList.remove('active');
+    });
+
+    this.classList.add('active');
     const targetBtn = event.target.id;
     initTimeTracking(targetBtn);
 }
