@@ -7,13 +7,12 @@
 }
 
 .item-card {
-  /* height          : 200px; */
   height       : 100%;
   border-radius: 1em;
   box-sizing   : border-box;
 }
 
-.sobreposicao {
+.overlap {
   height       : 50px;
   width        : 100%;
   border-radius: 1em 1em 0 0;

@@ -1,39 +1,39 @@
-.work .sobreposicao {
+.work .overlap {
   background-image   : url("../img/icons/icon-work.svg");
   background-position: right;
   background-repeat  : no-repeat;
   background-color   : var(--Light-red);
 }
 
-.play .sobreposicao {
+.play .overlap {
   background-image   : url("../img/icons/icon-play.svg");
   background-position: right;
   background-repeat  : no-repeat;
   background-color   : var(--Soft-blue);
 }
 
-.study .sobreposicao {
+.study .overlap {
   background-image   : url("../img/icons/icon-study.svg");
   background-position: right;
   background-repeat  : no-repeat;
   background-color   : var(--Light-red);
 }
 
-.exercise .sobreposicao {
+.exercise .overlap {
   background-image   : url("../img/icons/icon-exercise.svg");
   background-position: right;
   background-repeat  : no-repeat;
   background-color   : var(--Lime-green);
 }
 
-.social .sobreposicao {
+.social .overlap {
   background-image   : url("../img/icons/icon-social.svg");
   background-position: right;
   background-repeat  : no-repeat;
   background-color   : var(--Violet);
 }
 
-.self-care .sobreposicao {
+.self-care .overlap {
   background-image   : url("../img/icons/icon-self-care.svg");
   background-position: right;
   background-repeat  : no-repeat;

@@ -1,7 +1,7 @@
 const url = './data/data.json';
 
 const informationsField = document.querySelectorAll('.informations');
-const btnTimeTracking = document.querySelectorAll('.periodos li');
+const btnTimeTracking = document.querySelectorAll('.time-tracker li');
 
 // Renderiza as informações de rastreamento de tempo DIÁRIO
 function handleTimeTrackingInitial(dataJSON) {
@@ -10,7 +10,7 @@ function handleTimeTrackingInitial(dataJSON) {
             <p>${dataJSON[i].title}</p>
             <h2>${dataJSON[i].timeframes.daily.current}hrs</h2>
             <span>
-                Last Daily - ${dataJSON[i].timeframes.daily.previous}hrs
+                Last Day - ${dataJSON[i].timeframes.daily.previous}hrs
             </span>
         `;
     });
@@ -23,7 +23,7 @@ function handleTimeTrackingWeekly(dataJSON) {
             <p>${dataJSON[i].title}</p>
             <h2>${dataJSON[i].timeframes.weekly.current}hrs</h2>
             <span>
-                Last Weekly - ${dataJSON[i].timeframes.weekly.previous}hrs
+                Last Week - ${dataJSON[i].timeframes.weekly.previous}hrs
             </span>
         `;
     });
@@ -36,7 +36,7 @@ function handleTimeTrackingMonthly(dataJSON) {
             <p>${dataJSON[i].title}</p>
             <h2>${dataJSON[i].timeframes.monthly.current}hrs</h2>
             <span>
-                Last Monthly - ${dataJSON[i].timeframes.monthly.previous}hrs
+                Last Month - ${dataJSON[i].timeframes.monthly.previous}hrs
             </span>
         `;
     });
