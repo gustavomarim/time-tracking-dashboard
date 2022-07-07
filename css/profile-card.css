@@ -73,3 +73,30 @@
 .periodos ul li.active {
   color: #fff;
 }
+
+@media(max-width: 870px) {
+  .perfil {
+    margin: 15px;
+  }
+
+  .user-information {
+    display    : flex;
+    align-items: center;
+    height     : 250px;
+    width      : 100%;
+  }
+
+  .periodos {
+    height: 100px;
+  }
+
+  .periodos>div {
+    margin       : 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .periodos ul {
+    display: flex;
+    gap    : 20px;
+  }
+}
